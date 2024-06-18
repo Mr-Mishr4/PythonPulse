@@ -1,0 +1,44 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        # Ensures no lines end with whitespace.
+      - id: end-of-file-fixer
+        # Ensures files end with exactly one newline.
+      - id: check-yaml
+        # Checks YAML files for syntax errors.
+      - id: check-added-large-files
+        # Prevents large files from being added to the repository.
+      - id: debug-statements
+        # Checks for debug statements in the code.
+
+  - repo: https://github.com/psf/black
+    rev: "24.1.1"
+    hooks:
+      - id: black
+        stages: [commit]
+        # Formats Python code using Black.
+
+  - repo: https://github.com/pycqa/flake8
+    rev: "7.0.0"
+    hooks:
+      - id: flake8
+        args: ["--config=StreamScrape/.flake8"]
+
+        # Checks for Python syntax errors and style violations.
+
+  - repo: https://github.com/pycqa/pydocstyle
+    rev: "6.3.0"
+    hooks:
+      - id: pydocstyle
+        # Checks compliance with Python docstring conventions.
+
+  - repo: https://github.com/pycqa/isort
+    rev: "5.13.2"
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
+        # Sorts imports in Python files.

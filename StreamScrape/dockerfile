@@ -1,0 +1,18 @@
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim-buster
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy requirements and install them
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip3 install -r requirements.txt
+
+# Copy the rest of the application code
+COPY . /app
+
+# RUN python3 setup.py install
+
+#Command to run linters
+# CMD ["bash", "-c", "pre-commit run --all-files"]
