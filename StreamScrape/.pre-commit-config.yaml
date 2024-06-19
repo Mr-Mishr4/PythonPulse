@@ -26,7 +26,7 @@ repos:
     rev: "7.0.0"
     hooks:
       - id: flake8
-        args: ["--config=StreamScrape/.flake8"]
+        args: ["--config=.flake8"]
 
         # Checks for Python syntax errors and style violations.
 
