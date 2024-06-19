@@ -1,1 +1,1 @@
-"""Consumer task consume products and perfor ETL."""
+"""Consumer task consume products and performa ETL operations."""
